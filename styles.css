@@ -943,24 +943,26 @@ svg {
   }
 
   .hero {
-    min-height: 760px;
+    min-height: 810px;
+    background: var(--ink);
   }
 
   .hero__image {
-    object-position: 66% center;
+    height: 445px;
+    object-position: 68% center;
   }
 
   .hero__shade {
     background:
-      linear-gradient(90deg, rgba(5, 5, 5, 0.94) 0%, rgba(5, 5, 5, 0.55) 74%, rgba(5, 5, 5, 0.35) 100%),
-      linear-gradient(180deg, rgba(5, 5, 5, 0.2) 0%, rgba(5, 5, 5, 0.13) 39%, rgba(5, 5, 5, 0.96) 84%);
+      linear-gradient(90deg, rgba(5, 5, 5, 0.5) 0%, rgba(5, 5, 5, 0.08) 54%, rgba(5, 5, 5, 0.08) 100%),
+      linear-gradient(180deg, rgba(5, 5, 5, 0.08) 0, rgba(5, 5, 5, 0.04) 280px, rgba(5, 5, 5, 0.52) 370px, var(--ink) 445px, var(--ink) 100%);
   }
 
   .hero__content {
-    min-height: 686px;
-    padding-top: 270px;
-    padding-bottom: 42px;
-    justify-content: flex-end;
+    min-height: 0;
+    padding-top: 318px;
+    padding-bottom: 36px;
+    justify-content: flex-start;
   }
 
   .availability {
@@ -970,9 +972,14 @@ svg {
 
   .hero__title {
     margin-top: 22px;
-    font-size: clamp(3rem, 13.4vw, 4.4rem);
-    line-height: 1;
-    letter-spacing: -0.025em;
+    margin-bottom: 18px;
+    font-size: clamp(2.5rem, 12.4vw, 3.5rem);
+    line-height: 0.98;
+    letter-spacing: 0.01em;
+  }
+
+  .hero__title-line {
+    display: block;
   }
 
   .hero__title em {
