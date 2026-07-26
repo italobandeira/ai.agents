@@ -12,10 +12,24 @@
 }
 
 @font-face {
+  font-family: "Gordan";
+  src: url("assets/Gordan.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Coolvetica";
+  src: url("assets/Coolvetica.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
   font-family: "Blacksword";
-  src:
-    local("Blacksword"),
-    url("assets/Blacksword.otf") format("opentype");
+  src: url("assets/Blacksword.otf") format("opentype");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -36,7 +50,7 @@ body {
   background: var(--ink);
   color: var(--white);
   font-family: var(--font-body);
-  font-synthesis: none;
+  font-synthesis: weight;
 }
 
 a {
@@ -1010,7 +1024,8 @@ svg {
   }
 
   .agents {
-    padding-top: 82px;
+    padding-top: 68px;
+    padding-bottom: 24px;
   }
 
   .agents::before {
@@ -1020,39 +1035,101 @@ svg {
     transform: rotate(-7deg) scale(1.16);
   }
 
+  .eyebrow {
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 0.64rem;
+    line-height: 1.4;
+  }
+
+  .eyebrow::before {
+    width: 28px;
+    flex: 0 0 28px;
+  }
+
+  .agents__heading-row {
+    gap: 22px;
+  }
+
   .agents__heading-row h2 {
-    font-size: clamp(3.05rem, 15vw, 4.8rem);
+    font-size: clamp(2.75rem, 13.2vw, 4rem);
+    line-height: 0.98;
+  }
+
+  .agents__heading-row > p {
+    font-size: 0.94rem;
+    line-height: 1.55;
   }
 
   .agent-list {
-    margin-top: 46px;
-    gap: 14px;
+    margin-top: 36px;
+    gap: 12px;
   }
 
   .agent-card__content {
-    min-height: 390px;
-    padding: 24px;
+    min-height: 0;
+    padding: 22px 22px 20px;
+  }
+
+  .agent-card__topline {
+    gap: 12px;
   }
 
   .agent-card__body {
-    padding: 38px 0 34px;
+    padding: 32px 0 28px;
+  }
+
+  .agent-card__kicker {
+    margin-bottom: 10px;
   }
 
   .agent-card__body h3 {
-    font-size: clamp(2.8rem, 14vw, 4.2rem);
+    font-size: clamp(2.55rem, 13vw, 3.75rem);
+    line-height: 1;
   }
 
   .agent-card__body > p:last-child {
+    margin-top: 16px;
     font-size: 0.91rem;
+    line-height: 1.5;
+  }
+
+  .agent-card__action {
+    min-height: 44px;
+    padding-top: 16px;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
   }
 
   .status {
+    min-height: 28px;
+    padding: 0 9px;
     font-size: 0.54rem;
+    white-space: nowrap;
   }
 
   .agent-card__visual,
   .agent-card__visual img {
-    min-height: 320px;
+    min-height: clamp(240px, 56vw, 320px);
+  }
+
+  .visual-caption {
+    right: 14px;
+    bottom: 12px;
+  }
+
+  .visual-corner {
+    left: 14px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .visual-corner--top {
+    top: 14px;
+  }
+
+  .visual-corner--bottom {
+    bottom: 14px;
   }
 
   .agent-card__visual--photo img {
@@ -1080,6 +1157,23 @@ svg {
     width: calc(100% - 28px);
     justify-content: center;
     text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .agents__heading-row h2 {
+    font-size: clamp(2.55rem, 13vw, 3rem);
+  }
+
+  .agent-card__content {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .status {
+    padding-right: 8px;
+    padding-left: 8px;
+    letter-spacing: 0.06em;
   }
 }
 
