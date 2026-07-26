@@ -426,13 +426,17 @@ svg {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-wrap: balance;
+  align-items: center;
+  justify-content: center;
 }
 
 .agents__heading-row h2 span {
+  display: inline-block;
   padding: 0 0.08em;
-  background: var(--signal);
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+  background: linear-gradient(var(--signal), var(--signal)) top / 100%
+    calc(100% - 0.19em) no-repeat;
+  box-decoration-break: slice;
+  -webkit-box-decoration-break: slice;
 }
 
 .agents__heading-row > p {
@@ -440,6 +444,7 @@ svg {
   color: #565752;
   font-size: 1rem;
   line-height: 1.6;
+  text-align: right;
   text-wrap: pretty;
 }
 
@@ -893,6 +898,7 @@ svg {
 
   .agents__heading-row > p {
     max-width: 550px;
+    text-align: left;
   }
 
   .agent-card {
