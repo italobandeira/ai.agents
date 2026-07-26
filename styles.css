@@ -340,19 +340,61 @@ svg {
   color: var(--ink);
 }
 
-.agents::before {
-  content: "";
+.agents__backdrop {
   position: absolute;
   z-index: 0;
   inset: -8%;
-  background-image: url("data:image/svg+xml,%3Csvg width='820' height='230' viewBox='0 0 820 230' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='157' fill='%23050505' font-family='Gordan,Arial Black,sans-serif' font-size='240' font-weight='200' letter-spacing='1' textLength='800' lengthAdjust='spacingAndGlyphs'%3EESPECIALISTA%3C/text%3E%3C/svg%3E");
-  background-position: center top;
-  background-repeat: repeat;
-  background-size: 820px 230px;
-  opacity: 0.025;
+  overflow: hidden;
   transform: rotate(-6deg) scale(1.12);
   transform-origin: center;
   pointer-events: none;
+  user-select: none;
+}
+
+.agents__backdrop::before {
+  content:
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA\A"
+    "  ESPECIALISTA   ESPECIALISTA   ESPECIALISTA   ESPECIALISTA";
+  display: block;
+  color: var(--ink);
+  font-family: "Gordan", Impact, "Arial Black", sans-serif;
+  font-size: clamp(8rem, 16vw, 15rem);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 0.94;
+  white-space: pre;
+  opacity: 0.025;
 }
 
 .agents__intro,
@@ -1028,11 +1070,16 @@ svg {
     padding-bottom: 24px;
   }
 
-  .agents::before {
+  .agents__backdrop {
     inset: -5% -20%;
-    background-size: 500px 140px;
-    opacity: 0.035;
     transform: rotate(-7deg) scale(1.16);
+  }
+
+  .agents__backdrop::before {
+    font-size: 8rem;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    opacity: 0.035;
   }
 
   .eyebrow {
@@ -1108,9 +1155,13 @@ svg {
     white-space: nowrap;
   }
 
-  .agent-card__visual,
+  .agent-card__visual {
+    min-height: 0;
+    aspect-ratio: 1;
+  }
+
   .agent-card__visual img {
-    min-height: clamp(240px, 56vw, 320px);
+    min-height: 0;
   }
 
   .visual-caption {
